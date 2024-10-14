@@ -17,7 +17,7 @@ class LinkedList {
             }
             current.next = newNode; 
         }
-    }
+    };
     prepend(value){
         const newNode = new Node(value)
         if (!this.head){
@@ -26,7 +26,7 @@ class LinkedList {
             newNode.next = this.head;
             this.head = newNode;
         }
-    }
+    };
     size() {
         let size = 0
         let current = this.head
@@ -36,11 +36,11 @@ class LinkedList {
             current = current.next
         }
         return size
-    }
+    };
      getHead() {
         console.log(this.head);
         return this.head.value
-    }
+    };
     getTail(){
         let current = this.head;
         while(current.next){
@@ -48,7 +48,7 @@ class LinkedList {
         };
         console.log(current);
         return current.value
-    }
+    };
     at(index){
         if(index < 0) {
             throw new Error('Cannot handle negative index')
@@ -67,7 +67,7 @@ class LinkedList {
         }
         console.log(current)
         return current
-    }
+    };
     pop(){
         if (!this.head) return undefined;
 
@@ -87,7 +87,46 @@ class LinkedList {
         return lastValue
 
 
-    }
+    };
+    contains(value){
+        let current = this.head;
+        
+        while(current){
+            if (current.value === value) return true;
+            current = current.next;
+        }
+        return false
+    };
+
+    find(value){
+        let current = this.head;
+
+        while (current){
+            if (current.value === value) {
+                return current.value
+            }
+            current = current.next;
+        }
+        return null
+    };
+    toString(){
+        let current = this.head;
+        let string = ""
+        while(current){
+            string += `(${current.value}) -> `
+            current = current.next
+        }
+        string += '(null)'
+        console.log(string)
+    };
+
+    // To do
+    insertAt(value, index) {
+
+    };
+    removeAt(index) {
+
+    };
 }
 
 export default LinkedList

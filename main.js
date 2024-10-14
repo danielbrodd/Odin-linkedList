@@ -7,7 +7,7 @@ linkedList.append(3);
 linkedList.append(4);
 linkedList.append(5);
 linkedList.prepend(1);
-linkedList.getTail()
+// linkedList.getTail()
 
 let size = linkedList.size()
 
@@ -19,5 +19,14 @@ let size = linkedList.size()
 
 
 
-linkedList.pop()
-linkedList.getTail()
+// linkedList.pop()
+// linkedList.getTail()
+
+let res = linkedList.contains(1)
+// console.log(res)
+linkedList.append(10)
+let res2 = linkedList.find(10)
+// console.log(res2)
+
+
+linkedList.toString()
