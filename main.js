@@ -29,4 +29,21 @@ let res2 = linkedList.find(10)
 // console.log(res2)
 
 
+
 linkedList.toString()
+linkedList.insertAt("a",5);
+linkedList.toString()
+linkedList.removeAt(4);
+linkedList.toString()
+
+
+const list = new LinkedList();
+
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+
+console.log(list.toString())

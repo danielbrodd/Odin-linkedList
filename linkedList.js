@@ -116,16 +116,52 @@ class LinkedList {
             string += `(${current.value}) -> `
             current = current.next
         }
-        string += '(null)'
+        string += 'null'
         console.log(string)
     };
 
     // To do
     insertAt(value, index) {
+        if (index < 0) throw new Error("Cannot handle negative index");
 
+        let current = this.head;
+        let previous = null;
+        let counter = 0;
+        let newNode = new Node(value);
+
+        if (index === 0) {
+            newNode.next = this.head;
+            this.head = newNode
+            return
+        }
+        while(counter < index) {
+            previous = current
+            current = current.next;
+            counter++
+            
+            if(!current) {
+                console.log('out of bounds')
+                throw new Error('out of bounds: no such index, use .append()')
+            }
+        }
+        newNode.next = current;
+        previous.next = newNode;
     };
     removeAt(index) {
+        if (index < 0) throw new Error("Cannot handel negative index");
 
+        let current = this.head;
+        let previous = null;
+        let counter = 0;
+        
+        while(counter < index) {
+            counter++
+            previous = current;
+            current = current.next;
+            
+        }
+        previous.next = current.next;
+        current = null;
     };
 }
 
